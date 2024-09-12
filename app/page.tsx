@@ -5,6 +5,7 @@ import EasyPage from "@/app/pages/EasyPage"
 import MediumPage from "@/app/pages/MediumPage"
 import HardPage from "@/app/pages/HardPage"
 import WebAppPage from "@/app/pages/WebAppPage"
+import Footer from "@/app/pages/Footer"
 
 export default function Home() {
   const [page, setPage] = useState("easy")
@@ -23,7 +24,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col bg-black w-screen p-10 lg:px-20 items-center">
+    <div className="flex flex-col bg-[#06062C] pt-10 lg:px-20 items-center h-full">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -64,10 +65,7 @@ export default function Home() {
         </button>
       </motion.div>
       <motion.div 
-        className="mt-20"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 2 }}
+        className="w-full"
       >
         {page === "easy" && (
           (<EasyPage />)
@@ -82,6 +80,9 @@ export default function Home() {
           (<WebAppPage />)
         )}
       </motion.div>
+      <div className="mt-40 border-t-2 w-full">
+        <Footer />
+      </div>
     </div>
   );
 }
