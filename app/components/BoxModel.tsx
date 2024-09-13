@@ -20,7 +20,7 @@ const BoxModel = ({
       transition={{ duration: 1, delay: 1 }}
       className="h-80 mt-10"
     >
-      <CardContainer>
+      <CardContainer className="shadow-2xl">
         <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] h-auto rounded-xl p-6 border">
           <CardItem
             translateZ="50"
@@ -29,8 +29,8 @@ const BoxModel = ({
             {title}
           </CardItem>
           <CardItem translateZ="100" className="mt-4">
-            <a href={href}>
-              <Image src={image} alt="img" />
+            <a href={href} className="">
+              <Image src={image} alt="img" className="object-contain h-60" />
             </a>
           </CardItem>
         </CardBody>
