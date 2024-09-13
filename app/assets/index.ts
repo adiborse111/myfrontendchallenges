@@ -1,3 +1,4 @@
+// easy images
 import qrcode from "../assets/easy/QrCode.jpg";
 import blogpreview from "../assets/easy/BlogPreview.jpg";
 import productpreview from "../assets/easy/ProductPreview.jpg";
@@ -6,6 +7,9 @@ import resultsummary from "../assets/easy/ResultSummary.jpg";
 import recipe from "../assets/easy/RecipePage.jpg";
 import fourcard from "../assets/easy/four-card-feature-section-master/design/desktop-design.jpg";
 import nft from "../assets/easy/nft-preview-card-component-main/design/desktop-design.jpg";
+
+// medium images
+
 
 export const EasyData = [
   {
