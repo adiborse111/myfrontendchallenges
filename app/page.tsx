@@ -10,17 +10,8 @@ import Footer from "@/app/pages/Footer"
 export default function Home() {
   const [page, setPage] = useState("easy")
 
-  const Easy = () => {
-    setPage("easy")
-  }
-  const Medium = () => {
-    setPage("medium")
-  }
-  const Hard = () => {
-    setPage("hard")
-  }
-  const WebApp = () => {
-    setPage("webapp")
+  const Set = (str: string) => {
+    setPage(str)
   }
 
   return (
@@ -39,25 +30,25 @@ export default function Home() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1 }}
       >
-        <button className="p-[3px] relative" onClick={Easy}>
+        <button className="p-[3px] relative" onClick={()=>Set("easy")}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             Easy
           </div>
         </button>
-        <button className="p-[3px] relative" onClick={Medium}>
+        <button className="p-[3px] relative" onClick={()=>Set("medium")}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             Medium
           </div>
         </button>
-        <button className="p-[3px] relative" onClick={Hard}>
+        <button className="p-[3px] relative" onClick={()=>Set("hard")}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             Hard
           </div>
         </button>
-        <button className="p-[3px] relative" onClick={WebApp}>
+        <button className="p-[3px] relative" onClick={()=>Set("webapp")}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             WebApp
