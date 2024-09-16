@@ -1,18 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import EasyPage from "@/app/pages/EasyPage"
-import MediumPage from "@/app/pages/MediumPage"
-import HardPage from "@/app/pages/HardPage"
-import WebAppPage from "@/app/pages/WebAppPage"
-import Footer from "@/app/pages/Footer"
+import EasyPage from "@/app/pages/EasyPage";
+import MediumPage from "@/app/pages/MediumPage";
+import HardPage from "@/app/pages/HardPage";
+import WebAppPage from "@/app/pages/WebAppPage";
+import Footer from "@/app/pages/Footer";
 
 export default function Home() {
-  const [page, setPage] = useState("easy")
+  const [page, setPage] = useState("easy");
 
-  const Set = (str: string) => {
-    setPage(str)
-  }
 
   return (
     <div className="flex flex-col bg-[#06062C] pt-10 lg:px-20 items-center h-full">
@@ -30,46 +27,36 @@ export default function Home() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1 }}
       >
-        <button className="p-[3px] relative" onClick={()=>Set("easy")}>
+        <button className="p-[3px] relative" onClick={() => setPage("easy")}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             Easy
           </div>
         </button>
-        <button className="p-[3px] relative" onClick={()=>Set("medium")}>
+        <button className="p-[3px] relative" onClick={() => setPage("medium")}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             Medium
           </div>
         </button>
-        <button className="p-[3px] relative" onClick={()=>Set("hard")}>
+        <button className="p-[3px] relative" onClick={() => setPage("hard")}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             Hard
           </div>
         </button>
-        <button className="p-[3px] relative" onClick={()=>Set("webapp")}>
+        <button className="p-[3px] relative" onClick={() => setPage("webapp")}>
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             WebApp
           </div>
         </button>
       </motion.div>
-      <motion.div 
-        className="w-full"
-      >
-        {page === "easy" && (
-          (<EasyPage />)
-        )}
-        {page === "medium" && (
-          (<MediumPage />)
-        )}
-        {page === "hard" && (
-          (<HardPage />)
-        )}
-        {page === "webapp" && (
-          (<WebAppPage />)
-        )}
+      <motion.div className="w-full">
+        {page === "easy" && <EasyPage />}
+        {page === "medium" && <MediumPage />}
+        {page === "hard" && <HardPage />}
+        {page === "webapp" && <WebAppPage />}
       </motion.div>
       <div className="mt-40 border-t-2 w-full">
         <Footer />

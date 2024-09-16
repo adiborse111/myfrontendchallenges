@@ -3,6 +3,7 @@
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const BoxModel = ({
   href,
@@ -29,9 +30,9 @@ const BoxModel = ({
             {title}
           </CardItem>
           <CardItem translateZ="100" className="mt-4">
-            <a href={href} className="">
+            <Link href={href} className="">
               <Image src={image} alt="img" className="object-contain h-60" />
-            </a>
+            </Link>
           </CardItem>
         </CardBody>
       </CardContainer>

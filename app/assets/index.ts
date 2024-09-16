@@ -18,6 +18,7 @@ import adviceapp from "../assets/hard/AdviceApp.jpg"
 import introsection from "../assets/hard/IntroSectionDropdown.jpg"
 import productlist from "../assets/hard/ProductListCart.jpg"
 import sunnylanding from "../assets/hard/SunnyLandingPage.jpg"
+import loopstudio from "../assets/hard/LoopstudioLanding.jpg"
 
 // webapp images
 
@@ -104,6 +105,11 @@ export const HardData = [
     href: "https://frontend-challeges.vercel.app/SunnysideLanding",
     image: sunnylanding,
     title: "Sunnyside Landing Page",
+  },
+  {
+    href: "/projects/hard/loopstudios-landing-page-main",
+    image: loopstudio,
+    title: "LoopStudio Landing Page",
   },
 ];
 
