@@ -10,7 +10,7 @@ const BoxModel = ({
   title,
 }: {
   href: string;
-  image: ImageData;
+  image: string;
   title: string;
 }) => {
   return (
