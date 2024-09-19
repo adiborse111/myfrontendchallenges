@@ -1,5 +1,6 @@
 "use Client";
 
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Second from "./components/Second";
 import Third from "./components/Third";
@@ -11,6 +12,7 @@ const page = () => {
       <Hero />
       <Second />
       <Third />
+      <Footer />
     </div>
   );
 };
