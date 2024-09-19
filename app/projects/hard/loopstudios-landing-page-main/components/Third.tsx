@@ -10,9 +10,9 @@ import pocketPc from "../images/desktop/image-pocket-borealis.jpg";
 import curiosityPc from "../images/desktop/image-curiosity.jpg";
 import fisheyePc from "../images/desktop/image-fisheye.jpg";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const Button = ({ title, img }: { title: string; img: string }) => {
+const Button = ({ title, img }: { title: string; img: StaticImageData }) => {
   return (
     <button className="relative text-white font-thin hover:text-black">
       <Image src={img} alt="img" className="hover:-z-10 hover:opacity-30" />
