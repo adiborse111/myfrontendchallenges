@@ -15,17 +15,21 @@ import data from "./data.json";
 import Image from "next/image";
 import { createContext, useContext, useState } from "react";
 
-// interface MyContextType {
-//   func: () => void;
-// }
 type MyContextType = {
   level: string;
-  levelChange: ({ result }: { result: string }) => void; // Function signature
+  levelChange: ( result : string) => void; // Function signature
 };
 const LevelContext = createContext<MyContextType | undefined>(undefined);
+const useMyContext = () => {
+  const context = useContext(LevelContext);
+  if (!context) {
+    throw new Error("useMyContext must be used within a MyProvider");
+  }
+  return context;
+};
 
 const SelectButton = ({ name }: { name: string }) => {
-  const { level, levelChange } = useContext(LevelContext);
+  const { level, levelChange } = useMyContext();
   return (
     <button className="hover:text-white" onClick={() => levelChange("weekly")}>
       {name}
@@ -54,7 +58,7 @@ const Card = () => {
 
 const Page = () => {
   const [level, setLevel] = useState("daily");
-  const levelChange = ({ result }: { result: string }) => {
+  const levelChange = (result: string) => {
     setLevel(result);
     console.log(result);
   };
