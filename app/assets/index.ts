@@ -13,6 +13,7 @@ import ordersummary from "../assets/easy/order-summary-component.jpg"
 import mortgage from "../assets/medium/MortgageCalculator.jpg"
 import signupform from "../assets/medium/SignUpForm.jpg"
 import tipcalculator from "../assets/medium/TipCalculator.jpg"
+import timetracking from "../assets/medium/time-tracking-dashboard.jpg"
 
 // hard images
 import adviceapp from "../assets/hard/AdviceApp.jpg"
@@ -88,6 +89,11 @@ export const MediumData = [
     href: "https://frontend-challeges.vercel.app/TipCalculator",
     image: tipcalculator,
     title: "Tip Calculator App",
+  },
+  {
+    href: "/projects/medium/time-tracking-dashboard-main",
+    image: timetracking,
+    title: "Time Tracking Dashboard",
   },
 ];
 
