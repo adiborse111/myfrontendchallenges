@@ -7,6 +7,7 @@ import resultsummary from "../assets/easy/ResultSummary.jpg";
 import recipe from "../assets/easy/RecipePage.jpg";
 import fourcard from "../assets/easy/four-card-feature-section-master/design/desktop-design.jpg";
 import nft from "../assets/easy/nft-preview-card-component-main/design/desktop-design.jpg";
+import ordersummary from "../assets/easy/order-summary-component.jpg"
 
 // medium images
 import mortgage from "../assets/medium/MortgageCalculator.jpg"
@@ -64,6 +65,11 @@ export const EasyData = [
     href: "https://frontend-challeges.vercel.app/ProductCard",
     image: productpreview,
     title: "Product Preview Card",
+  },
+  {
+    href: "/projects/easy/order-summary-component-main",
+    image: ordersummary,
+    title: "Order Summary Component",
   },
 ];
 
