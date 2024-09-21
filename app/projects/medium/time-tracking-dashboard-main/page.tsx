@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
@@ -17,10 +18,10 @@ import { createContext, useContext, useState } from "react";
 
 type MyContextType = {
   level: string;
-  levelChange: ( result : string) => void; // Function signature
+  levelChange: (result: string) => void; // Function signature
 };
 const LevelContext = createContext<MyContextType | undefined>(undefined);
-const useMyContext = () => {
+const useMyLevelContext = () => {
   const context = useContext(LevelContext);
   if (!context) {
     throw new Error("useMyContext must be used within a MyProvider");
@@ -29,35 +30,84 @@ const useMyContext = () => {
 };
 
 const SelectButton = ({ name }: { name: string }) => {
-  const { level, levelChange } = useMyContext();
+  const { level, levelChange } = useMyLevelContext();
   return (
-    <button className="hover:text-white" onClick={() => levelChange("weekly")}>
+    <button className={`hover:text-white ${name === level && 'text-white'}`} onClick={() => levelChange(name)}>
       {name}
     </button>
   );
 };
 
-const Card = () => {
+const SwitchImage = (title: string) => {
+  switch (title) {
+    case "Work":
+      return (
+        <div className="bg-orange-400 flex justify-end w-full rounded-xl absolute z-0">
+          <Image src={work} alt="Play image" />
+        </div>
+      );
+    case "Play":
+      return (
+        <div className="bg-cyan-400 flex justify-end w-full rounded-xl absolute z-0">
+          <Image src={play} alt="Play image" />
+        </div>
+      );
+    case "Study":
+      return (
+        <div className="bg-red-400 flex justify-end w-full rounded-xl absolute z-0">
+          <Image src={study} alt="Play image" />
+        </div>
+      );
+    case "Exercise":
+      return (
+        <div className="bg-green-400 flex justify-end w-full rounded-xl absolute z-0">
+          <Image src={exercise} alt="Play image" />
+        </div>
+      );
+    case "Social":
+      return (
+        <div className="bg-purple-400 flex justify-end w-full rounded-xl absolute z-0">
+          <Image src={social} alt="Play image" />
+        </div>
+      );
+    case "Self Care":
+      return (
+        <div className="bg-yellow-400 flex justify-end w-full rounded-xl absolute z-0">
+          <Image src={selfcare} alt="Play image" />
+        </div>
+      );
+    default:
+      return null;
+  }
+};
+
+const Card = ({
+  title,
+  current,
+  previous,
+}: {
+  title: string;
+  current: number;
+  previous: number;
+}) => {
   return (
     <div className="flex flex-col relative">
-      <div className="bg-orange-400 flex justify-end w-full rounded-xl absolute z-0">
-        <Image src={work} alt="img" />
-      </div>
+      {SwitchImage(title)}
 
       <div className="flex flex-col p-4 bg-[#1c1f4a] text-white gap-4 rounded-xl mt-14 z-10 pb-6 hover:bg-[#6f76c8]">
-        <div className="flex flex-row items-center gap-32">
-          <h1>Work</h1>
+        <div className="flex flex-row items-center w-56 justify-between">
+          <h1>{title}</h1>
           <Image src={ellipsis} alt="img" className="h-1" />
         </div>
-        <h1 className="text-5xl">32hrs</h1>
-        <h1 className="text-sm">Last Week - 24hrs</h1>
+        <h1 className="text-5xl">{current}hrs</h1>
+        <h1 className="text-sm">Last Week - {previous}hrs</h1>
       </div>
     </div>
   );
 };
 
 const Page = () => {
-  const [level, setLevel] = useState("daily");
+  const [level, setLevel] = useState("Daily");
   const levelChange = (result: string) => {
     setLevel(result);
     console.log(result);
@@ -87,11 +137,21 @@ const Page = () => {
           </div>
         </div>
         <div className="grid grid-cols-3 h-fit gap-5">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {data.map((data) => {
+            return (
+              <Card
+                title={data.title}
+                current={level === 'Daily' ? data.timeframes.daily.current : 
+                  level === 'Weekly' ? data.timeframes.weekly.current :
+                  data.timeframes.monthly.current
+                }
+                previous={level === 'Daily' ? data.timeframes.daily.previous : 
+                  level === 'Weekly' ? data.timeframes.weekly.previous :
+                  data.timeframes.monthly.previous
+                }
+              />
+            );
+          })}
         </div>
       </div>
     </div>
