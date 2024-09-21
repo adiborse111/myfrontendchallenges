@@ -110,7 +110,6 @@ const Page = () => {
   const [level, setLevel] = useState("Daily");
   const levelChange = (result: string) => {
     setLevel(result);
-    console.log(result);
   };
   return (
     <div className="bg-[#0f1424] h-screen flex justify-center items-center">
