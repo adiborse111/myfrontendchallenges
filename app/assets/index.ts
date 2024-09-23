@@ -14,6 +14,7 @@ import mortgage from "../assets/medium/MortgageCalculator.jpg"
 import signupform from "../assets/medium/SignUpForm.jpg"
 import tipcalculator from "../assets/medium/TipCalculator.jpg"
 import timetracking from "../assets/medium/time-tracking-dashboard.jpg"
+import pricingtoggle from "../assets/medium/pricing-component-toggle.jpg"
 
 // hard images
 import adviceapp from "../assets/hard/AdviceApp.jpg"
@@ -94,6 +95,11 @@ export const MediumData = [
     href: "/projects/medium/time-tracking-dashboard-main",
     image: timetracking,
     title: "Time Tracking Dashboard",
+  },
+  {
+    href: "/projects/medium/pricing-component-with-toggle-master",
+    image: pricingtoggle,
+    title: "Pricing Component Toggle",
   },
 ];
 
