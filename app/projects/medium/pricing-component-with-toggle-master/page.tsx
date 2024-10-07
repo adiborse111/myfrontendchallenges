@@ -3,7 +3,7 @@ import Image from "next/image";
 import bgtop from "./images/bg-top.svg";
 import bgbottom from "./images/bg-bottom.svg";
 
-import SwitchDemo from "./components/SwitchToggle";
+import SwitchToggle from "./components/SwitchToggle";
 
 const Page = () => {
   return (
@@ -18,7 +18,7 @@ const Page = () => {
         <h1 className="text-4xl text-gray-500 font-semibold">Our Pricing</h1>
         <div className="flex flex-row gap-6 mt-10">
           <h1>Annually</h1>
-          <SwitchDemo />
+          <SwitchToggle />
           <h1>Monthly</h1>
         </div>
       </div>
