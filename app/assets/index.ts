@@ -8,6 +8,7 @@ import recipe from "../assets/easy/RecipePage.jpg";
 import fourcard from "../assets/easy/four-card-feature-section-master/design/desktop-design.jpg";
 import nft from "../assets/easy/nft-preview-card-component-main/design/desktop-design.jpg";
 import ordersummary from "../assets/easy/order-summary-component.jpg"
+import newslettersignup from "../assets/easy/NewsLetterSignup.jpg"
 
 // medium images
 import mortgage from "../assets/medium/MortgageCalculator.jpg"
@@ -72,6 +73,11 @@ export const EasyData = [
     href: "/projects/easy/order-summary-component-main",
     image: ordersummary,
     title: "Order Summary Component",
+  },
+  {
+    href: "/projects/easy/newsletter-sign-up-with-success-message-main",
+    image: newslettersignup,
+    title: "News Letter Signup",
   },
 ];
 
