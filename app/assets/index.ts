@@ -23,7 +23,6 @@ import introsection from "../assets/hard/IntroSectionDropdown.jpg"
 import productlist from "../assets/hard/ProductListCart.jpg"
 import sunnylanding from "../assets/hard/SunnyLandingPage.jpg"
 import loopstudio from "../assets/hard/LoopstudioLanding.jpg"
-import easybank from "../assets/hard/EasyBankLandingPage.jpg"
 
 // webapp images
 
@@ -135,11 +134,6 @@ export const HardData = [
     href: "/projects/hard/loopstudios-landing-page-main",
     image: loopstudio,
     title: "LoopStudio Landing Page",
-  },
-  {
-    href: "/projects/hard/easybank-landing-page-master",
-    image: easybank,
-    title: "EasyBank Landing Page",
   },
 ];
 
